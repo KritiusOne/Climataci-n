@@ -11,6 +11,12 @@
 body{
     background-color: var(--color-background);
 }
+.header{
+    position: absolute;
+    top: 0;
+    background-color: var(--color-target);
+    width: 100%;
+}
 .container{
     margin-top: 60px;
     display: grid;
@@ -33,13 +39,12 @@ body{
 .info > h2, h3{
     color: var(--color-letters);
 }
-
 .status__description::first-letter{
     text-transform: uppercase;
 }
-.city__name{
-
-}
 .vel-viento__title{
     text-align: center;
+}
+.main__status__img{
+
 }
