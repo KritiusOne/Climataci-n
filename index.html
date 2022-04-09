@@ -6,28 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Climataci-n</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <nav class="header__nav">
-            <a href="#info" class="button"><span class="header__nav__button__title">info</span></a>
-            <a href="#buscar" class="button"><span class="header__nav__button__title">buscar</span></a>
-            <a href="#footer" class="button"><span class="header__nav__button__title">sobre Nosotros</span></a>
+            <a href="#info" class="header__nav__button"><span class="header__nav__button__title">info</span></a>
+            <a href="#buscar" class="header__nav__button"><span class="header__nav__button__title">buscar</span></a>
+            <a href="#footer" class="header__nav__button"><span class="header__nav__button__title">sobre Nosotros</span></a>
         </nav>
     </header>
     <main class="main">
-        <section class="container" id="info">
-            <div class="info vel-viento"></div>
-            <div class="info status">
+        
+        <div class="main__card">
+            <header class="main__card__header">
+                <img src="icons/card-pattern.svg" alt="" class="main__card__header__pattern">
+                <img src="Icons/brightness_5_black_48dp.svg" alt="" class="main__card__header__img">
+            </header>
+            <div class="main__card__body">
+                <span class="card__city"></span>
+                <span class="card__status"></span>
             </div>
-            <div class="info city"></div>
-        </section>
-        <img src="" class="main__status__img">
+            <footer class="main__card__footer">
+                <div class="card__footer__data">
+                    <h3 class="card__footer__data__vientoValue value"></h3>
+                    <h5 class="card__footer__data__vientoTitle title">Velocidad del viento</h5>
+                </div>
+                <div class="card__footer__data">
+                    <h3 class="card__footer__data__tempValue value"></h3>
+                    <h5 class="card__footer__data__tempTitle title">Temperatura</h5>
+                </div>
+                <div class="card__footer__data">
+                    <h3 class="card__footer__data__humedadValue value">esto es un ejemplo</h3>
+                    <h5 class="card__footer__data__humedadTitle title">Humedad</h5>
+                </div>
+            </footer>
+        </div>
         <section class="main__buscar-info" id="buscar">
 
         </section>
     </main>
     <footer class="footer" id="footer"></footer>
+    <script src="Screen.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

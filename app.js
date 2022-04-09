@@ -1,8 +1,18 @@
-const paneles = document.querySelectorAll(".info");
-const viento = document.querySelector(".vel-viento");
-const ciudad = document.querySelector(".city");
-const estado = document.querySelector(".status");
-const img = document.querySelector(".main__status__img");
+const vientoValue = document.querySelector(".card__footer__data__vientoValue");
+const tempValue = document.querySelector(".card__footer__data__tempValue");
+const city = document.querySelector(".card__city");
+const statusValue = document.querySelector(".card__status");
+const humidity = document.querySelector(".card__footer__data__humedadValue");
+const CardWeather = new Screen(city, statusValue, tempValue, vientoValue, humidity);
+
+var cityValue = {
+    city: "null",
+    temp: "null",
+    windSpeed: "null",
+    status: "null",
+    humidity: "null"
+}
+
 addEventListener('load', ()=>{
     let lat;
     let lon;
@@ -12,32 +22,21 @@ addEventListener('load', ()=>{
             lon = posicion.coords.longitude;
             lat = posicion.coords.latitude;
 
-            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=c7e5db7318795903c94124cb561f1803&units=metric`;
-            const urlCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c7e5db7318795903c94124cb561f1803`;
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=c7e5db7318795903c94124cb561f1803&lang=es&units=metric`;
+            const urlCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c7e5db7318795903c94124cb561f1803`
 
             fetch(url)
             .then(response =>{return response.json()} )
             .then(data =>{
                 console.log(data);
-                viento.innerHTML = `<h2 class='vel-viento__title'>${data.wind.speed} m/s</h2>`;
-                let status = data.weather[0].description;
-                let temp = Math.round(data.main.temp);
-                estado.innerHTML += `<h2 class='status__description'>${status}</h2>
-                 `;
-                ciudad.innerHTML = `<h2 class='city__name'>${data.name}</h2>
-                <h3 class='status__temp'>${temp}°C</h3>`;
-
-                let climaMain = data.weather[0].main;
-                switch(climaMain){
-                    case "rain":
-                        img.setAttribute("src", "ilustraciones / Rain_monometric.svg")
-
-
-                    default: 
-                        img.setAttribute("src", "ilustraciones/ Sun_Isometric.svg");
-                }
+                cityValue.city = data.name;
+                cityValue.status = data.weather[0].description;
+                cityValue.humidity = data.main.humidity;
+                cityValue.temp = data.main.temp;
+                cityValue.windSpeed = data.wind.speed;
+                CardWeather.imp(cityValue);
+                console.log(cityValue.humidity)
             })
         })
     }
 })
-
