@@ -10,21 +10,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ce11f24c0f.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="header">
         <nav class="header__nav">
-            <a href="#info" class="header__nav__button"><span class="header__nav__button__title">info</span></a>
-            <a href="#buscar" class="header__nav__button"><span class="header__nav__button__title">buscar</span></a>
-            <a href="#footer" class="header__nav__button"><span class="header__nav__button__title">sobre Nosotros</span></a>
+            <a href="#info" class="header__nav__button">Info</a>
+            <a href="#buscar" class="header__nav__button">buscar</a>
+            <a href="#footer" class="header__nav__button">sobre mi</a>
         </nav>
     </header>
     <main class="main">
-        
-        <div class="main__card">
+        <div class="main__card" id="info">
             <header class="main__card__header">
                 <img src="icons/card-pattern.svg" alt="" class="main__card__header__pattern">
-                <img src="Icons/brightness_5_black_48dp.svg" alt="" class="main__card__header__img">
+                <img src="" alt="" class="main__card__header__img">
             </header>
             <div class="main__card__body">
                 <span class="card__city"></span>
@@ -40,17 +40,33 @@
                     <h5 class="card__footer__data__tempTitle title">Temperatura</h5>
                 </div>
                 <div class="card__footer__data">
-                    <h3 class="card__footer__data__humedadValue value">esto es un ejemplo</h3>
+                    <h3 class="card__footer__data__humedadValue value"></h3>
                     <h5 class="card__footer__data__humedadTitle title">Humedad</h5>
                 </div>
             </footer>
         </div>
-        <section class="main__buscar-info" id="buscar">
-
+        <section class="main__search" id="buscar">
+            <h2 class="main__search__title search__element">¡Ingresa la ciudad que quieres ver!</h2>
+            <input type="text" class="main__search__input search__element" placeholder="Escribe una ciudad...">
+            <input type="submit" class="main__search__button search__element" placeholder="hola">
         </section>
     </main>
-    <footer class="footer" id="footer"></footer>
-    <script src="Screen.js"></script>
-    <script src="app.js"></script>
+    <footer class="footer" id="footer">
+        <section class="footer__division division-rigth">
+            <h1 class="footer__division__title">Hecho por Julio Rodríguez Ureche</h1>
+            <h3 class="footer__division__subtitle">Hecho con la api de OpenWeathermap</h3>
+        </section>
+        <section class="footer__division division-left">
+            <h3 class="footer__division__subtitle">Sigueme tambien en: </h3>
+            <div class="footer__division__icons">
+                <a href="https://github.com/KritiusOne" class="icon__button" target="_blank"><i class="fab fa-github-square"></i></a>
+                <a href="https://www.linkedin.com/in/julio-rodriguez-97863021a/" class="icon__button" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </section>
+    </footer>
+    <script src="js/iconChange.js"></script>
+    <script src="js/Screen.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/cityChange.js"></script>
 </body>
 </html>
