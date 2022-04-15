@@ -6,6 +6,7 @@
 :root{
     --color-black: #000000;
     --color-light-blue: #4DCFF7;
+    --color-nav: #6A5CF2;
     --font-title: 'Roboto', sans-serif;
     --font-subtitle: 'Open Sans', sans-serif;
     --color-whiteToGrey: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -27,16 +28,22 @@ body{
     align-items: center;
 }
 .header__nav__button{
-    margin: 5px 0px;
     text-decoration: none;
     height: 30px;
     text-decoration: none;
     color: var(--color-black);
     font-family: var(--font-title);
-    padding-top: auto;
+    padding-top: 5px;
     text-transform: capitalize;
     width: 80px;
     text-align: center;
+}
+.fa-bars{
+    height: 100%;
+    width: 70px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
 }
 .main{
     display: flex;
@@ -170,6 +177,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
 }
 .footer__division__title, .fa-brands, .footer__division__subtitle{
     color: #ffffff;
@@ -195,4 +203,9 @@ body{
 .fa-linkedin{
     font-size: 45px;
     color: #0e76a8;
+}
+@media screen and (max-width: 700px){
+    .footer{
+        flex-direction: column;
+    }
 }
