@@ -12,7 +12,7 @@
     --color-whiteToGrey: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 body{
-    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    background-color: #000;
 }
 .header{
     width: 100%;
@@ -48,6 +48,7 @@ body{
 .main{
     display: flex;
     flex-direction: column;
+    min-width: 400px;
 }
 .main__card{
     display: flex;
@@ -175,6 +176,7 @@ body{
     padding: 40px;
     justify-content: space-between;
     align-items: center;
+    min-width: 400px;
 }
 .footer__division{
     display: flex;
@@ -201,7 +203,7 @@ body{
 }
 .fa-github-square{
     font-size: 45px;
-    color: #000;
+    color: #fff;
 }
 .fa-linkedin{
     font-size: 45px;
@@ -209,7 +211,7 @@ body{
 }
 @media screen and (max-width: 700px){
     .main{
-        width: 100%;
+        width: 100vw;
     }
     .main__card{
         width: 80%;
