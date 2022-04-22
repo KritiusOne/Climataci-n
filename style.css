@@ -110,6 +110,8 @@ body{
     font-size: 14px;
     font-family:var(--font-subtitle);
     color: #888;
+    display: flex;
+    flex-wrap: wrap;
 }
 .card__footer__data{
     display: flex;
@@ -122,16 +124,17 @@ body{
     flex-direction: column;
     margin-top: 250px;
     background-color: var(--color-light-blue);
-    width: 100%;
     justify-content: center;
     align-items: center;
     height: 400px;
+    text-align: center;
 }
 .search__element{
     margin-top: 20px;
     width: 400px;
 }
 .main__search__title{
+    font-size: 25px;
     color: var(--color-black);
     font-family: var(--font-title);
 }
@@ -205,6 +208,19 @@ body{
     color: #0e76a8;
 }
 @media screen and (max-width: 700px){
+    .main{
+        width: 100%;
+    }
+    .main__card{
+        width: 80%;
+    }
+    .main__search__title{
+        margin: 0 auto;
+        font-size: 20px;
+    }
+    .main__search__input, .main__search__button{
+        width: 300px;
+    }
     .footer{
         flex-direction: column;
     }
